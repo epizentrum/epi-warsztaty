@@ -1,0 +1,62 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav__menu {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.nav__menu-link>a {
+    text-decoration: none;
+}
+
+.nav__menu-link>a:hover {
+    color: black;
+}
+
+.nav__menu-link--active>a {
+    text-decoration: underline;
+}
+
+.article {
+    display: flex;
+}
+
+.article * {
+    width: 50%;
+}
+
+.article p {
+    padding: 20px;
+}
+
+.footer {
+    background-color: rgb(15, 129, 129);
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.footer p {
+    text-align: center;
+}
+
+span {
+    color: blue
+}
+
+.test>* {
+    color: red
+}

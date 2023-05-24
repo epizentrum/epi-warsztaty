@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program pytający o piwo</title>
+</head>
+
+<body>
+
+
+    <script>
+        /*
+        2. Program sprzedający PIWO
+    - Musi pytać użytkownika o wiek
+    - Jeśli wiek >= 18, to program sprzedaje piwo (console.log co tam chcecie)
+    - Jeśli wiek < 18, to program odmawia piwa :(
+    - Jeśli wiek > 150, to program mówi, że się kłamie
+    - Jeśli użytnik odmówi odpowiedzi, to program wyrzuca go za drzwi
+    (Co jeśli użytkownik nie wpisze liczby?) (Number(zmienna), a później (typeof)
+    (tylko trochę nieobowiązkowe)
+    */
+
+        const userAge = Number(prompt('Podaj swój wiek:'));
+        if (isNaN(userAge)) {
+            console.log('Nie podałeś prawidłowo wieku!');
+        } else if (!userAge) {
+            console.log('Dziękuję, dobranoc');
+        } else if (userAge > 150) {
+            console.log('Ty kłamczuchu!');
+        } else if (userAge >= 18) {
+            console.log('Proszę, oto PIWO!');
+        } else {
+            console.log('Brak piwa dla niepełnoletnich.');
+        }
+    </script>
+</body>
+
+</html>

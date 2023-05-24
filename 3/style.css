@@ -1,0 +1,89 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2 {
+    padding: 20px;
+}
+
+.before::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: aqua;
+}
+
+.after::after {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 30px;
+    margin-right: 10px;
+    background-color: aqua;
+}
+
+.list {
+    margin-left: 50px;
+    font-size: 1.4em;
+    list-style: none;
+}
+
+.list li {
+    position: relative;
+}
+
+.list li::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: aqua;
+    position: absolute;
+    top: 50%;
+    /* top: calc(50% - (10px / 2)); */
+    left: -15px;
+
+    transform: translate(0, -50%) rotate(45deg) scale(0.8);
+}
+
+.business-card {
+    font-family: 'Roboto', sans-serif;
+    width: 500px;
+    border: 3px solid rgb(177, 132, 19);
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    position: relative;
+}
+
+.business-card::before,
+.business-card::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    position: absolute;
+}
+
+.business-card::before {
+    top: 0;
+    left: 0;
+    background-image: url(Corner_Ornament_Gold_Up_Left.png);
+}
+
+.business-card::after {
+    right: 0;
+    bottom: 0;
+    background-image: url(Corner_Ornament_Gold_Down_Right.png);
+}

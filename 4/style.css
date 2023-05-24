@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sky {
+    height: 100vh;
+    background-image: url('stars.jpg');
+    background-size: 150% 150%;
+    background-position: 0 0;
+    overflow: hidden;
+    position: relative;
+    animation: starsMove 20s ease infinite reverse both;
+}
+
+.moon {
+    position: absolute;
+    bottom: calc(-110vw);
+    left: 50%;
+    transform: translate(-50%, 10%);
+    width: 200%;
+}
+
+.moon img {
+    width: 100%;
+    animation: moonRotate 60s linear infinite both;
+}
+
+.rocket {
+    position: absolute;
+    width: 20vw;
+    bottom: -20vw;
+    left: -20vw;
+    transform: rotate(45deg);
+    animation: rocketMove 10s ease-in infinite both;
+}
+
+.rocket img {
+    width: 100%;
+}
+
+@keyframes moonRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes starsMove {
+    0% {
+        background-position: 0 0;
+        background-size: 150% 150%;
+
+
+    }
+
+    25% {
+        background-position: 100% 0;
+    }
+
+    50% {
+        background-position: 100% 100%;
+        background-size: 200% 200%;
+
+    }
+
+    75% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0 0;
+        background-size: 150% 150%;
+    }
+}
+
+@keyframes rocketMove {
+    0% {
+        bottom: -20vw;
+        left: -20vw;
+        transform: rotate(45deg);
+    }
+
+    10% {
+        transform: rotate(45deg);
+    }
+
+    20% {
+        bottom: 50%;
+        left: 50%;
+        transform: rotate(-45deg);
+    }
+
+    40% {
+        bottom: 120vw;
+        left: -20vw;
+        transform: rotate(-60deg);
+
+    }
+
+    100% {
+        bottom: 120vw;
+        left: calc(100% + 20vw);
+    }
+}

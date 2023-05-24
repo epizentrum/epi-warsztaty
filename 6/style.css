@@ -1,0 +1,205 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.logo {
+    width: 50vmin;
+    min-width: 100px;
+    position: relative;
+}
+
+.logo::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-color: black;
+    border-radius: 50%;
+    transition: 1s;
+    transform: scale(0);
+}
+
+.active.logo::before {
+    transform: scale(20);
+}
+
+.text {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transform: translatey(1000px);
+    transition: 3s;
+    transition-delay: 0.5s;
+    z-index: 2;
+    opacity: 0;
+    position: relative;
+    font-size: clamp(0.5em, 2vh + 2vw, 5em);
+}
+
+.logo.active+.text {
+    transform: translatey(0);
+    opacity: 1;
+    animation: float 10s infinite, flicker 1.5s infinite alternate;
+}
+
+.logo-btn {
+    display: block;
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: pulse-animation 2s infinite;
+    padding: 5vmin;
+    position: relative;
+    background-color: black;
+    transition: 3s;
+}
+
+.logo-btn:focus {
+    animation: shrink 3s ease both, tilt 0.3s linear infinite;
+}
+
+.logo.active .logo-btn:focus {
+    animation: none;
+}
+
+.logo.active .logo-btn img {
+    border-radius: 50%;
+    animation: rotate 10s 1s ease infinite, pulse-animation2 2s 1s ease infinite;
+}
+
+.logo-btn img {
+    display: block;
+    width: 100%;
+    pointer-events: none;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 0 40px rgba(0, 0, 0, 0);
+    }
+}
+
+@keyframes pulse-animation2 {
+    0% {
+        box-shadow: 0 0 0 0px rgba(179, 4, 223, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 0 100vmax rgba(179, 4, 223, 0);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.7);
+    }
+}
+
+@keyframes tilt {
+    0% {
+        left: 0px;
+    }
+
+    25% {
+        left: 5px;
+    }
+
+    50% {
+        left: 0px;
+    }
+
+    75% {
+        left: -5px;
+    }
+
+    100% {
+        left: 0px;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(360deg);
+    }
+
+    20% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0%);
+    }
+
+    50% {
+        transform: translatey(30%);
+    }
+
+    100% {
+        transform: translatey(0%);
+    }
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #4e0061,
+            0 0 80px #4e0061,
+            0 0 90px #4e0061,
+            0 0 100px #4e0061,
+            0 0 150px #4e0061
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}

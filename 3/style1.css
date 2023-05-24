@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.screen {
+    background-color: black;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+
+    width: 100vw;
+    /* Viewport width */
+    height: 100vh;
+    /* Viewport height */
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.dvd {
+    width: 20vw;
+    height: 10vw;
+}
+
+.dvd svg {
+    fill: #fff;
+    animation: rainbow 4000ms ease-in-out infinite both;
+}
+
+@keyframes rainbow {
+    0% {
+        fill: rgb(199, 16, 16);
+    }
+
+    25% {
+        fill: rgb(24, 44, 221);
+    }
+
+    50% {
+        fill: rgb(221, 218, 24);
+    }
+
+    75% {
+        fill: rgb(221, 24, 205);
+    }
+
+    100% {
+        fill: rgb(199, 16, 16);
+    }
+}
+
+.dvd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: dvd 5s linear infinite both;
+}
+
+@keyframes dvd {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: 30%;
+        left: calc(100% - 20vw);
+        /* left: 100%; */
+    }
+
+    50% {
+        top: 60%;
+        left: 0;
+    }
+
+
+    70% {
+        top: calc(100% - 10vw);
+        left: calc(100% - 20vw);
+        /* left: 100%; */
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+    }
+
+}

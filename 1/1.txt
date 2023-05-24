@@ -1,0 +1,4 @@
+rekreowanie designów
+animacje css/js
+podstawy css, js
+robienie całych stron statycznych

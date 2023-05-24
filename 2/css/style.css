@@ -1,0 +1,148 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 300vh;
+}
+
+.wrapper {
+    min-height: 200vh;
+}
+
+nav {
+    background-color: darkorange;
+    padding: 2em;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: none;
+}
+
+.square {
+    position: sticky;
+    top: 0;
+    left: 0;
+    border: 3px solid black;
+    background: yellow;
+    width: 50%;
+    margin: 2em auto;
+    margin-top: 100px;
+    aspect-ratio: 1/1;
+
+
+}
+
+.child {
+    display: inline-block;
+    width: 50px;
+    border: 3px solid black;
+    aspect-ratio: 1/1;
+
+}
+
+.child.first {
+    border-color: red;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+
+ul {
+    padding: 2em;
+    font-size: 1.5em;
+}
+
+.middle {
+    text-decoration: underline;
+}
+
+.middle+li {
+    /* Bezpośredni następny bliźniak li */
+    color: red;
+}
+
+.middle~* {
+    /* Wszystkie następne bliźniaki */
+    color: blue;
+}
+
+ul>:not(.middle) {
+    /* Wszystkie elementy li, które nie mają klasy middle */
+    outline: 3px solid black;
+}
+
+ul li:nth-child(1) {
+    /* Pierwsze dziecko */
+    color: red;
+}
+
+ul li:first-child {
+    /* Pierwsze dziecko */
+    color: red;
+}
+
+ul li:nth-child(even) {
+    /* Wszystkie parzyste */
+    color: green
+}
+
+ul :nth-child(odd) {
+    /* Wszystkie nieparzyste */
+    background-color: rgb(165, 214, 165)
+}
+
+ul :last-child {
+    /* Wszystkie nieparzyste */
+    background-color: rgb(165, 207, 214)
+}
+
+ul li:nth-child(7) {
+    /* Nie zadziała, ponieważ nie ma li, które by było siódmym dzieckiem */
+    padding: 30px !important;
+}
+
+ul li:nth-of-type(7) {
+    /* Siódmy element danego typu */
+    padding: 20px;
+}
+
+input {
+    /* border: 2px solid red; */
+    /* Border wpływa na przesunięcia elementów na stronie */
+    outline: 2px solid red;
+    /* Outline nie wpływa na przesunięcia elementów na stronie, jedynie zaznacza elementy */
+    transition: 0.3s;
+}
+
+input:hover,
+input:focus {
+    background-color: aqua;
+}
+
+input[type] {
+    /* Wyszukuje wszystkie elementy, które mają atrybut type */
+    outline: 2px solid blue;
+}
+
+input[type="number"] {
+    /* Wyszukuje wszystkie elementy, które mają atrybut type o wartości number */
+    outline: 2px solid green;
+}
+
+
+
+
+
+
+/* .wrapper>div>span {
+    color: red;
+    font-size: 1.5em;
+} */
